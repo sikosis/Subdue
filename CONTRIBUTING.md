@@ -30,6 +30,5 @@ IDE state. Attach release artifacts to a GitHub Release instead.
 - Describe how the change was tested.
 - Update the appropriate README when behavior or build steps change.
 
-A public project license has not yet been selected. Outside code contributions
-should not be accepted until the repository has a `LICENSE` file defining the
-terms under which contributions and redistribution are allowed.
+By submitting a contribution, you agree that it may be distributed under the
+project's [MIT License](LICENSE).

@@ -281,8 +281,9 @@ void hideWindowAfterConfirmation() {
 }
 
 void completeSchedule(const std::wstring& message) {
+    const bool smother = gSchedule && gSchedule->action == ActionMode::smother;
     setStatus(message);
-    notify(L"Subdue", message);
+    notify(smother ? L"Smother" : L"Subdue", message);
     clearSchedule();
 }
 
@@ -310,7 +311,7 @@ std::optional<std::chrono::system_clock::time_point> calculateFireTime(TimingMod
     return std::chrono::system_clock::from_time_t(std::mktime(&local));
 }
 
-bool muteDefaultAudio() {
+HRESULT muteDefaultAudio() {
     IMMDeviceEnumerator* enumerator = nullptr;
     IMMDevice* device = nullptr;
     IAudioEndpointVolume* endpointVolume = nullptr;
@@ -327,7 +328,13 @@ bool muteDefaultAudio() {
     if (endpointVolume) endpointVolume->Release();
     if (device) device->Release();
     if (enumerator) enumerator->Release();
-    return SUCCEEDED(result);
+    return result;
+}
+
+std::wstring hresultCode(HRESULT result) {
+    wchar_t buffer[16]{};
+    swprintf_s(buffer, L"0x%08lX", static_cast<unsigned long>(result));
+    return buffer;
 }
 
 bool armSubdueSchedule(const AppTarget& target, std::chrono::system_clock::time_point fireTime, bool force) {
@@ -358,8 +365,13 @@ void tickSchedule() {
     auto& schedule = *gSchedule;
     if (schedule.action == ActionMode::smother) {
         if (std::chrono::system_clock::now() >= schedule.fireTime) {
-            completeSchedule(muteDefaultAudio() ? L"System audio was muted."
-                                                : L"Could not mute the default audio output.");
+            const HRESULT result = muteDefaultAudio();
+            if (SUCCEEDED(result)) {
+                completeSchedule(L"System audio was muted.");
+            } else {
+                completeSchedule(L"Could not mute the default audio output (" +
+                                 hresultCode(result) + L").");
+            }
             return;
         }
         setStatus(L"System audio will be muted. Remaining: " + countdownText(schedule.fireTime));

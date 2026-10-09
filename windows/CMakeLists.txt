@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(SubdueWindows VERSION 0.11.0 LANGUAGES CXX RC)
+project(SubdueWindows VERSION 0.12.0 LANGUAGES CXX RC)
 
 add_executable(Subdue WIN32
     src/main.cpp

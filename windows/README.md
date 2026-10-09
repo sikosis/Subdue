@@ -1,5 +1,9 @@
 # Subdue for Windows
 
+![Windows 10 and 11](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows11&logoColor=white)
+![Version 0.12](https://img.shields.io/badge/version-0.12-4c8bf5)
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+
 Subdue for Windows is the native C++/Win32 equivalent of the macOS utility. It
 can schedule Subdue to close an application or Smother to mute the default
 audio output. Once armed, its window shows the confirmation for five seconds,
@@ -28,8 +32,13 @@ build-windows.bat Debug
 ```
 
 The batch file locates Visual Studio automatically and calls `rc.exe` and
-`cl.exe` directly. No additional build shell or generator is required. The executable and
-SHA-256-labelled ZIP are written under `windows\dist`.
+`cl.exe` directly. No additional build shell or generator is required. The
+executable and SHA-256-labelled ZIP are written under `windows\dist`. The
+package contains `Subdue.exe`, this guide, and the MIT license.
+
+The current package is named `Subdue-0.12-windows-x64.zip`. Version 0.12
+includes both the Subdue application scheduler and the Smother audio scheduler;
+if the GUI has no **Action** selector, an older executable is being run.
 
 For a regular Visual Studio solution:
 
@@ -66,4 +75,12 @@ is still alive after ten seconds and force-close is enabled, it calls
 Subdue process cannot terminate an elevated target.
 
 Smother uses the Windows Core Audio endpoint-volume API. It mutes whichever
-playback device is the default when the schedule fires.
+playback device is the default when the schedule fires. A failed mute now
+reports its Windows `HRESULT` code in the completion notification to make audio
+device or permission problems easier to diagnose.
+
+## License
+
+Subdue is released under the [MIT License](../LICENSE).
+
+Copyright (c) 2026 Sikosis.

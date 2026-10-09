@@ -14,7 +14,7 @@
   <img alt="Windows 10 and 11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows11&logoColor=white">
   <img alt="Haiku" src="https://img.shields.io/badge/Haiku-native-ffcc00?logo=haiku&logoColor=000000">
   <img alt="Native applications" src="https://img.shields.io/badge/UI-native%20on%20each%20platform-4c8bf5">
-  <img alt="License pending" src="https://img.shields.io/badge/license-pending-lightgrey">
+  <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green">
 </p>
 
 Subdue is one utility with three independent, native implementations. It does
@@ -36,9 +36,9 @@ does not respond to a graceful close request within ten seconds.
 | Windows | C++20, Win32 and Core Audio | Notification-area countdown | [Windows source and guide](windows/) |
 | Haiku | C++17, Application/Interface/Media Kits | Deskbar countdown | [Haiku source and guide](haiku/) |
 
-The platform versions may differ while the newer ports settle. The macOS and
-Windows editions are currently version 0.11; the Haiku edition is version
-0.2.1.
+The platform versions may differ while the newer ports settle. The macOS
+edition is currently version 0.11, the Windows edition is version 0.12, and
+the Haiku edition is version 0.2.1.
 
 ## Features
 
@@ -160,7 +160,6 @@ all original source code in this repository is by Sikosis. See
 
 ## License
 
-A public software license has not yet been selected. Until a `LICENSE` file is
-added, the source remains copyright Sikosis with no general permission to
-redistribute or modify it. A recognized open-source license is required before
-the HaikuPorts submission can be accepted.
+Subdue is released under the [MIT License](LICENSE).
+
+Copyright (c) 2026 Sikosis.

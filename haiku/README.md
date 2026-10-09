@@ -157,5 +157,6 @@ Haiku version, architecture, the selected action, and any Terminal output.
 
 ## License
 
-A project license has not been selected yet. Add a `LICENSE` file before making
-the repository broadly reusable or accepting substantial contributions.
+Subdue is released under the [MIT License](../LICENSE).
+
+Copyright (c) 2026 Sikosis.

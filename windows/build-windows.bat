@@ -11,7 +11,7 @@ if /I not "%CONFIGURATION%"=="Release" if /I not "%CONFIGURATION%"=="Debug" (
 set "ROOT=%~dp0"
 set "BUILD=%ROOT%build"
 set "DIST=%ROOT%dist"
-set "VERSION=0.11"
+set "VERSION=0.12"
 set "OUTPUT=%BUILD%\%CONFIGURATION%"
 set "STAGE=%BUILD%\Subdue-%VERSION%-windows-x64"
 set "ARCHIVE=%DIST%\Subdue-%VERSION%-windows-x64.zip"
@@ -40,7 +40,7 @@ if errorlevel 1 (
 
 if not exist "%OUTPUT%" mkdir "%OUTPUT%"
 
-echo Building Subdue %VERSION% %CONFIGURATION%...
+echo Building Subdue %VERSION% with Smother %CONFIGURATION%...
 rc.exe /nologo /d UNICODE /d _UNICODE /i "%ROOT%resources" /fo "%OUTPUT%\Subdue.res" "%ROOT%resources\Subdue.rc"
 if errorlevel 1 exit /b %errorlevel%
 
@@ -63,6 +63,8 @@ if errorlevel 1 exit /b %errorlevel%
 copy /y "%OUTPUT%\Subdue.exe" "%STAGE%\Subdue.exe" >nul
 if errorlevel 1 exit /b %errorlevel%
 copy /y "%ROOT%README.md" "%STAGE%\README.md" >nul
+if errorlevel 1 exit /b %errorlevel%
+copy /y "%ROOT%..\LICENSE" "%STAGE%\LICENSE" >nul
 if errorlevel 1 exit /b %errorlevel%
 
 if not exist "%DIST%" mkdir "%DIST%"

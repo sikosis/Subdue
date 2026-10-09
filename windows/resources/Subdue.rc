@@ -4,8 +4,8 @@ IDI_SUBDUE ICON "Subdue.ico"
 IDR_MANIFEST 24 "Subdue.manifest"
 
 1 VERSIONINFO
- FILEVERSION 0,11,0,0
- PRODUCTVERSION 0,11,0,0
+ FILEVERSION 0,12,0,0
+ PRODUCTVERSION 0,12,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -21,12 +21,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "CompanyName", "Sikosis\0"
-            VALUE "FileDescription", "Subdue scheduled application and audio utility\0"
-            VALUE "FileVersion", "0.11\0"
+            VALUE "FileDescription", "Subdue and Smother scheduling utility\0"
+            VALUE "FileVersion", "0.12\0"
             VALUE "InternalName", "Subdue\0"
             VALUE "OriginalFilename", "Subdue.exe\0"
             VALUE "ProductName", "Subdue\0"
-            VALUE "ProductVersion", "0.11\0"
+            VALUE "ProductVersion", "0.12\0"
         END
     END
     BLOCK "VarFileInfo"
