@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  macos:
+    name: macOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build
+        run: >-
+          xcodebuild
+          -project Subdue.xcodeproj
+          -scheme Subdue
+          -configuration Debug
+          CODE_SIGNING_ALLOWED=NO
+          build
+
+  windows:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Configure
+        run: cmake -S windows -B windows/build -A x64
+      - name: Build
+        run: cmake --build windows/build --config Release

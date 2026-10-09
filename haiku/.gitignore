@@ -1,0 +1,6 @@
+Subdue
+Subdue.rsrc
+src/*.o
+tests/options_test
+*.hpkg
+package/

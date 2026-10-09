@@ -1,0 +1,29 @@
+# macOS and Xcode
+.DS_Store
+DerivedData/
+*.xcuserstate
+xcuserdata/
+build/
+dist/
+
+# Windows
+windows/build/
+windows/dist/
+windows/.vs/
+*.sln
+*.vcxproj*
+
+# Haiku
+haiku/Subdue
+haiku/Subdue.rsrc
+haiku/src/*.o
+haiku/tests/options_test
+haiku/artwork/icons/Subdue-Haiku-v[0-9]*.png
+*.hpkg
+
+# Local tooling
+.agents/
+.codex/
+AGENTS.md
+*.swp
+*~

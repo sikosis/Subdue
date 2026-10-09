@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a problem in one of the native Subdue editions
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - macOS
+        - Windows
+        - Haiku
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Subdue version
+      placeholder: "For example: 0.11 or 0.2.1"
+    validations:
+      required: true
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating system and architecture
+      placeholder: "For example: macOS 15 arm64, Windows 11 x64, Haiku R1/beta5 x86_64"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Select ...
+        2. Schedule ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Relevant output
+      description: Paste build, Terminal, or error output here.
+      render: shell

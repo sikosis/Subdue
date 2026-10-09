@@ -1,0 +1,15 @@
+{
+  "images" : [
+    { "filename" : "SubdueIcon-16.png",   "idiom" : "mac", "scale" : "1x", "size" : "16x16" },
+    { "filename" : "SubdueIcon-32.png",   "idiom" : "mac", "scale" : "2x", "size" : "16x16" },
+    { "filename" : "SubdueIcon-32.png",   "idiom" : "mac", "scale" : "1x", "size" : "32x32" },
+    { "filename" : "SubdueIcon-64.png",   "idiom" : "mac", "scale" : "2x", "size" : "32x32" },
+    { "filename" : "SubdueIcon-128.png",  "idiom" : "mac", "scale" : "1x", "size" : "128x128" },
+    { "filename" : "SubdueIcon-256.png",  "idiom" : "mac", "scale" : "2x", "size" : "128x128" },
+    { "filename" : "SubdueIcon-256.png",  "idiom" : "mac", "scale" : "1x", "size" : "256x256" },
+    { "filename" : "SubdueIcon-512.png",  "idiom" : "mac", "scale" : "2x", "size" : "256x256" },
+    { "filename" : "SubdueIcon-512.png",  "idiom" : "mac", "scale" : "1x", "size" : "512x512" },
+    { "filename" : "SubdueIcon-1024.png", "idiom" : "mac", "scale" : "2x", "size" : "512x512" }
+  ],
+  "info" : { "author" : "xcode", "version" : 1 }
+}
